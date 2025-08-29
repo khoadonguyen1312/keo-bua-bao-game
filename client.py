@@ -56,26 +56,28 @@ def Exit():
     root.destroy()
 
 
-btn_frame = Frame(root, bg="seashell3")
+
+btn_frame = Frame(root, bg="#FFF0F5") 
 btn_frame.pack(pady=15)
 
-Button(btn_frame, text='Bao', font='arial 15 bold', bg='lightblue',
-       width=8, command=lambda: play("Bao")).grid(row=0, column=0, padx=10)
+Button(btn_frame, text='Bao', font='Arial 15 bold', bg='#4DA6FF', fg='white',
+       width=8, command=lambda: play("Bao"), bd=3, relief='raised').grid(row=0, column=0, padx=10)
 
-Button(btn_frame, text='Búa', font='arial 15 bold', bg='lightgreen',
-       width=8, command=lambda: play("Bua")).grid(row=0, column=1, padx=10)
+Button(btn_frame, text='Búa', font='Arial 15 bold', bg='#66CC66', fg='white',
+       width=8, command=lambda: play("Bua"), bd=3, relief='raised').grid(row=0, column=1, padx=10)
 
-Button(btn_frame, text='Kéo', font='arial 15 bold', bg='lightpink',
-       width=8, command=lambda: play("Keo")).grid(row=0, column=2, padx=10)
+Button(btn_frame, text='Kéo', font='Arial 15 bold', bg='#FF9999', fg='white',
+       width=8, command=lambda: play("Keo"), bd=3, relief='raised').grid(row=0, column=2, padx=10)
 
-control_frame = Frame(root, bg="seashell3")
+
+control_frame = Frame(root, bg="#FFF0F5")
 control_frame.pack(pady=15)
 
-Button(control_frame, font='arial 13 bold', text='RESET', 
-       padx=10, bg='khaki', command=Reset).grid(row=0, column=0, padx=20)
+Button(control_frame, font='Arial 13 bold', text='RESET',
+       padx=10, bg='#F7DC6F', fg='black', bd=3, relief='raised', command=Reset).grid(row=0, column=0, padx=20)
 
-Button(control_frame, font='arial 13 bold', text='EXIT', 
-       padx=10, bg='tomato', command=Exit).grid(row=0, column=1, padx=20)
+Button(control_frame, font='Arial 13 bold', text='EXIT',
+       padx=10, bg='#FF6F61', fg='white', bd=3, relief='raised', command=Exit).grid(row=0, column=1, padx=20)
 
 
 threading.Thread(target=listen_server, daemon=True).start()
